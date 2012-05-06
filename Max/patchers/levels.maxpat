@@ -65,7 +65,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 785.0, 614.023987, 152.0, 46.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2.png"
 				}
 
 			}
@@ -123,7 +123,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 785.0, 565.0, 152.0, 46.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.jpg"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.jpg"
 				}
 
 			}
