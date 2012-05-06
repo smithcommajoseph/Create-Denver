@@ -13,8 +13,8 @@ var currentLevel = 0,
 	LEVEL_TRANS_NAME	= "_trans_",
 	JPG					= "jpg",
 	PNG					= "png",
-	MOV					= "mov";
-
+	MOV					= "mov",
+	PATH					= "/Users/joseph/Projects/create_denver/Max/media/";
 
 function bang(){
 	var ob = getResolvedOb();
@@ -26,11 +26,11 @@ function getResolvedOb(){
 	var ob = {};
 		
 	if(level_type != "level"){
-		ob.bg 		= "level"+LEVEL_TRANS_NAME+currentLevel+"."+MOV;
-		ob.overlay 	= "clear."+PNG;
+		ob.bg 		= PATH+"level"+LEVEL_TRANS_NAME+currentLevel+"."+MOV;
+		ob.overlay 	= PATH+"clear."+PNG;
 	} else {
-		ob.bg		= "level"+LEVEL_BG_NAME+currentLevel+"."+JPG;
-		ob.overlay	= "level"+LEVEL_OVERLAY_NAME+currentLevel+"."+PNG;
+		ob.bg		= PATH+"level"+LEVEL_BG_NAME+currentLevel+"."+JPG;
+		ob.overlay	= PATH+"level"+LEVEL_OVERLAY_NAME+currentLevel+"."+PNG;
 	}
 	
 	return ob;
