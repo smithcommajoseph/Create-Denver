@@ -13,9 +13,8 @@ var currentLevel = 0,
 	LEVEL_TRANS_NAME	= "_trans_",
 	JPG					= "jpg",
 	PNG					= "png",
-	MOV					= "mov";
-	PATH				= "/Users/joseph/Documents/Max 6 Projects/create_denver/media/";
-
+	MOV					= "mov",
+	PATH					= "/Users/joseph/Projects/create_denver/Max/media/";
 
 function bang(){
 	var ob = getResolvedOb();

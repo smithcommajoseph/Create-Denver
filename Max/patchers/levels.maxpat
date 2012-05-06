@@ -59,13 +59,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-23",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 785.0, 621.023987, 307.5, 32.0 ],
-					"text" : "\"/Users/joseph/Documents/Max 6 Projects/create_denver/media/clear.png\""
+					"patching_rect" : [ 785.0, 614.023987, 152.0, 46.0 ],
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/clear.png"
 				}
 
 			}
@@ -117,13 +117,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-19",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 785.0, 565.0, 307.5, 32.0 ],
-					"text" : "\"/Users/joseph/Documents/Max 6 Projects/create_denver/media/level_trans_1.mov\""
+					"patching_rect" : [ 785.0, 565.0, 152.0, 46.0 ],
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_trans_1.mov"
 				}
 
 			}
@@ -1017,7 +1017,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "levelcontroller.js",
-				"bootpath" : "/Users/joseph/Documents/Max 6 Projects/create_denver/code",
+				"bootpath" : "/Users/joseph/Projects/create_denver/Max/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
