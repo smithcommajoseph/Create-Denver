@@ -12,6 +12,7 @@ interface Constants {
   public static final int minZ = 610;
   public static final int maxZ = 1525;
   public static final int stages = 3 - 1;
+  public static final String oscNamespace = "/createdenver";
 }
 
 /*
@@ -116,22 +117,22 @@ int[] reverseXVals(int[] depthValues) {
 }
 
 void sendOSC() {
-//  for (int i=0; i<level.targets.length; i++) {
-//    OscMessage isActive = new OscMessage( level.targets[i].getMessageName() );
-//    isActive.add( level.targets[i].getMessageVal() );
-//    oscP5.send(isActive, remote);
-//  }
-
-  if(lastLevel != currentLevel){
-    //send level
-    OscMessage levelcount = new OscMessage( "/createdenver/level" );
-    levelcount.add( currentLevel );
-    oscP5.send(levelcount, remote);
+  //send target data
+  if(level.hasZones()){
+    OscMessage targetsData = new OscMessage( Constants.oscNamespace+"/targets" );
+    for (int i=0; i<level.targets.length; i++) {
+      targetsData.add( level.targets[i].getActiveState() );
+      targetsData.add( level.targets[i].getScore() );
+    }
+    oscP5.send(targetsData,remote);
+  }
   
-    //send level type
-    OscMessage leveltype = new OscMessage( "/createdenver/level_type" );
-    leveltype.add( level.type );
-    oscP5.send(leveltype, remote);
+  //send level data
+  if(lastLevel != currentLevel){   
+    OscMessage levelData = new OscMessage( Constants.oscNamespace+"/level" );
+    levelData.add( currentLevel );
+    levelData.add( level.type );
+    oscP5.send(levelData, remote);
     
     lastLevel = currentLevel;
   }

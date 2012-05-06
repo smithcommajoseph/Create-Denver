@@ -2,26 +2,23 @@
 inlets = 1;
 outlets = 4;
 
-//Vars
-var currentLevel = 0,
-	lastLevel = 0,
-	level_type = "level";
-
 //Constants
 	LEVEL_OVERLAY_NAME	= "_overlay_",
 	LEVEL_BG_NAME		= "_bg_",
 	LEVEL_TRANS_NAME	= "_trans_",
 	PATH				= "/Users/joseph/Projects/create_denver/Max/media/";
 
-function bang(){
-	var ob = getResolvedOb();
+function list(inputList){
+	var levelArr = arrayfromargs(arguments),
+		ob = getResolvedOb(levelArr[0], levelArr[1]);
+
 	outlet(0, ob.bg);
 	outlet(1, ob.overlay_1);
 	outlet(2, ob.overlay_2);
 	outlet(3, ob.overlay_3);
 }
 
-function getResolvedOb(){
+function getResolvedOb(currentLevel, level_type){
 	var ob = {};
 		
 	if(level_type != "level"){

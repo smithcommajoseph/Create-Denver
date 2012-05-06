@@ -10,7 +10,7 @@ class Target {
   pointer,
   score = 0,
   state = 0;
-
+    
   boolean wasActive = false;
   boolean[] zoneStates;
   int[] zoneIds;
@@ -86,12 +86,5 @@ class Target {
     this.score = 0;
   }
   
-  String getMessageName(){
-    return "/target_"+this.pointer;
-  }
-  
-  boolean getMessageVal(){
-    return this.wasActive; 
-  }
 }
 

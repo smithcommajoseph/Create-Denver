@@ -2,7 +2,7 @@
 	"name" : "create_denver",
 	"version" : 1,
 	"creationdate" : -876158010,
-	"modificationdate" : -875816077,
+	"modificationdate" : -875812604,
 	"viewrect" : [ 25.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -75,6 +75,16 @@
 			"levelcontroller.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
+			}
+,
+			"targetcontroller.js" : 			{
+				"kind" : "javascript",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Users/joseph/Projects/create_denver/Max/code/targetcontroller.js",
+					"projectrelativepath" : "../Max/code/targetcontroller.js"
+				}
+
 			}
 
 		}
