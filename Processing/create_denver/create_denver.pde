@@ -1,4 +1,3 @@
-import codeanticode.syphon.*;
 import SimpleOpenNI.*;
 import oscP5.*;
 import netP5.*;
@@ -29,7 +28,6 @@ scoredActiveZones,
 currentLevel = 0,
 lastLevel = 0;
 
-SyphonServer server;
 SimpleOpenNI kinect;
 OscP5 oscP5;
 NetAddress remote;
@@ -50,9 +48,6 @@ void setup() {
   // Init Kinect via SimpleOpenNI
   kinect = new SimpleOpenNI(this);
   kinect.enableDepth();
-
-  // Init Syphon Server
-  server = new SyphonServer(this, "Processing Syphon");
 
   // Init OSC biz
   oscP5 = new OscP5(this, 60001);
@@ -93,7 +88,6 @@ void draw() {
     scoredActiveZones = level.zones.getScoredActiveZones();
   }
 
-  sendSyphon();
   sendOSC();
 }
 
@@ -119,12 +113,6 @@ int[] reverseXVals(int[] depthValues) {
   }
 
   return returnArr;
-}
-
-void sendSyphon() {
-  // send image out via syphon
-  PImage cp = get();
-  server.sendImage(cp);
 }
 
 void sendOSC() {
@@ -154,10 +142,6 @@ public void stop() {
 }
 
 void dispose() {
-  if (server!=null) {
-    println("stopping the syphon server");
-    server.stop();
-  }
   //  if(kinect!=null){
   //    println("stopping kinect");
   //    SimpleOpenNI.Shutdown();  

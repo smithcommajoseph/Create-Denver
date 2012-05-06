@@ -2,7 +2,7 @@
 	"name" : "create_denver",
 	"version" : 1,
 	"creationdate" : -876158010,
-	"modificationdate" : -875820400,
+	"modificationdate" : -875816077,
 	"viewrect" : [ 25.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -24,11 +24,6 @@
 				"local" : 1
 			}
 ,
-			"level_overlay_0.png" : 			{
-				"kind" : "imagefile",
-				"local" : 1
-			}
-,
 			"level_bg_0.jpg" : 			{
 				"kind" : "imagefile",
 				"local" : 1
@@ -39,12 +34,37 @@
 				"local" : 1
 			}
 ,
-			"level_overlay_2.png" : 			{
+			"level_bg_2.jpg" : 			{
 				"kind" : "imagefile",
 				"local" : 1
 			}
 ,
-			"level_bg_2.jpg" : 			{
+			"level_overlay_2_3.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"level_overlay_2_2.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"level_overlay_2_1.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"level_overlay_0_3.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"level_overlay_0_2.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"level_overlay_0_1.png" : 			{
 				"kind" : "imagefile",
 				"local" : 1
 			}
@@ -65,10 +85,6 @@
 			}
 ,
 			"OpenSoundControl.mxo" : 			{
-				"kind" : "object"
-			}
-,
-			"jit.gl.syphonclient.mxo" : 			{
 				"kind" : "object"
 			}
 
