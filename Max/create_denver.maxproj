@@ -2,7 +2,7 @@
 	"name" : "create_denver",
 	"version" : 1,
 	"creationdate" : -876158010,
-	"modificationdate" : -875820400,
+	"modificationdate" : -875819832,
 	"viewrect" : [ 25.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -65,10 +65,6 @@
 			}
 ,
 			"OpenSoundControl.mxo" : 			{
-				"kind" : "object"
-			}
-,
-			"jit.gl.syphonclient.mxo" : 			{
 				"kind" : "object"
 			}
 

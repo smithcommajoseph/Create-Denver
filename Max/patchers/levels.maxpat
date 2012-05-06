@@ -7,7 +7,7 @@
 			"revision" : 4
 		}
 ,
-		"rect" : [ 205.0, 64.0, 751.0, 826.0 ],
+		"rect" : [ 198.0, 44.0, 981.0, 826.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -65,7 +65,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 785.0, 614.023987, 152.0, 46.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0.png"
 				}
 
 			}
@@ -123,7 +123,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 785.0, 565.0, 152.0, 46.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.jpg"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.jpg"
 				}
 
 			}
@@ -169,49 +169,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 104.0, 359.5, 80.0, 36.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-52",
-					"linecount" : 2,
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 118.0, 598.023987, 605.0, 34.0 ],
-					"text" : "jit.gl.videoplane thePassage @layer 2 @blend_enable 1 @color 1 1 1 1 @transform_reset 1 @blend_mode 1 1 @depth_enable 0 @scale 1.333 1. 1."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-50",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 121.0, 528.0, 114.0, 18.0 ],
-					"text" : "getavailableservers"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-49",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 118.0, 565.0, 149.0, 20.0 ],
-					"text" : "jit.gl.syphonclient 640 480"
 				}
 
 			}
@@ -664,19 +621,6 @@
 				}
 
 			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
-					"id" : "obj-2",
-					"ignoreclick" : 1,
-					"maxclass" : "panel",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 104.0, 505.0, 643.0, 163.0 ],
-					"rounded" : 0
-				}
-
-			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -932,15 +876,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-49", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-42", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -954,24 +889,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-46", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-49", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-49", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-50", 0 ]
 				}
 
 			}
@@ -1028,10 +945,6 @@
 			}
 , 			{
 				"name" : "OpenSoundControl.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.gl.syphonclient.mxo",
 				"type" : "iLaX"
 			}
  ]
