@@ -7,7 +7,7 @@
 			"revision" : 4
 		}
 ,
-		"rect" : [ 65.0, 44.0, 1197.0, 826.0 ],
+		"rect" : [ 0.0, 183.0, 1197.0, 826.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -53,7 +53,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 982.299927, 164.170807, 75.0, 18.0 ],
+					"patching_rect" : [ 980.099915, 150.170807, 75.0, 18.0 ],
 					"text" : "autowatch 1"
 				}
 
@@ -82,7 +82,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1266.748047, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_3.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
 				}
 
 			}
@@ -151,7 +151,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 700.845947, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_2.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
 				}
 
 			}
@@ -234,7 +234,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 128.512863, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_1.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
 				}
 
 			}
@@ -248,7 +248,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 129.512863, 137.385742, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.jpg"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.jpg"
 				}
 
 			}
@@ -1102,7 +1102,7 @@
 					"destination" : [ "obj-17", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 991.799927, 190.420868, 1178.799683, 190.420868 ],
+					"midpoints" : [ 989.599915, 190.420868, 1178.799683, 190.420868 ],
 					"source" : [ "obj-64", 0 ]
 				}
 
@@ -1112,7 +1112,7 @@
 					"destination" : [ "obj-5", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 991.799927, 190.420868, 1517.400024, 190.420868 ],
+					"midpoints" : [ 989.599915, 190.420868, 1517.400024, 190.420868 ],
 					"source" : [ "obj-64", 0 ]
 				}
 
@@ -1122,7 +1122,7 @@
 					"destination" : [ "obj-17", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 122.551117, 327.678772, 1178.799683, 327.678772 ],
+					"midpoints" : [ 122.551117, 92.670799, 1178.799683, 92.670799 ],
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -1151,7 +1151,7 @@
 					"destination" : [ "obj-64", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 209.012863, 99.670799, 991.799927, 99.670799 ],
+					"midpoints" : [ 209.012863, 99.670799, 989.599915, 99.670799 ],
 					"source" : [ "obj-9", 0 ]
 				}
 

@@ -12,10 +12,12 @@ function list(inputList){
 	var levelArr = arrayfromargs(arguments),
 		ob = getResolvedOb(levelArr[0], levelArr[1]);
 
-	outlet(0, ob.bg);
-	outlet(1, ob.overlay_1);
-	outlet(2, ob.overlay_2);
-	outlet(3, ob.overlay_3);
+	sendData(ob);
+}
+
+function bang(){
+	var ob = getResolvedOb(0, "level");
+	sendData(ob);
 }
 
 function getResolvedOb(currentLevel, level_type){
@@ -34,4 +36,11 @@ function getResolvedOb(currentLevel, level_type){
 	}
 	
 	return ob;
+}
+
+function sendData(ob){
+	outlet(0, ob.bg);
+	outlet(1, ob.overlay_1);
+	outlet(2, ob.overlay_2);
+	outlet(3, ob.overlay_3);
 }
