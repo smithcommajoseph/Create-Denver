@@ -76,7 +76,7 @@ void draw() {
     println("currentLevel: "+currentLevel);
     level = initLevel();
     
-    sendOSC();
+//    sendOSC();
   }
 
   background(0);
@@ -85,7 +85,7 @@ void draw() {
     kinect.update();
     int[] depthValues = kinect.depthMap();
     // draw and score (score must happen after draw)
-    level.zones.draw(depthValues);
+    level.zones.draw(reverseXVals(depthValues));
     scoredActiveZones = level.zones.getScoredActiveZones();
   }
 
@@ -119,12 +119,46 @@ int[] reverseXVals(int[] depthValues) {
 void sendOSC() {
   //send target data
   if(level.hasZones()){
-    OscMessage targetsData = new OscMessage( Constants.oscNamespace+"/targets" );
+    
     for (int i=0; i<level.targets.length; i++) {
-      targetsData.add( level.targets[i].getIsComplete() );
-      targetsData.add( level.targets[i].getScoreAsDecimal() );
+      boolean isComplete = level.targets[i].isComplete,
+              isCompleteLast = level.targets[i].isCompleteLast;
+      
+//      println("/targets/target_"+i+"/isComplete");
+//      println(isComplete != isCompleteLast);
+        //isComplete data
+        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
+        isCompleteData.add( level.targets[i].isComplete );
+        oscP5.send(isCompleteData, remote);
+        
+      if(isComplete != isCompleteLast){
+        
+//        //isComplete data
+//        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
+//        isCompleteData.add( level.targets[i].isComplete );
+//        oscP5.send(isCompleteData, remote);
+        
+        OscMessage faderValData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/faderVal" );
+        faderValData.add( "stop" );
+        oscP5.send(faderValData, remote);
+        
+        level.targets[i].isCompleteLast = level.targets[i].isComplete;
+      }
+      
+      //faderVal data
+      String faderVal = level.targets[i].faderVal,
+              faderValLast = level.targets[i].faderValLast;
+      
+      if(faderVal != faderValLast){
+        OscMessage faderValData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/faderVal" );
+        faderValData.add( level.targets[i].faderVal );
+        oscP5.send(faderValData, remote);
+        
+        level.targets[i].faderValLast = level.targets[i].faderVal;
+      }        
+      
     }
-    oscP5.send(targetsData,remote);
+   
   }
   
   //send level data

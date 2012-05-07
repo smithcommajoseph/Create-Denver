@@ -87,8 +87,8 @@ class Level{
     //create targets
     this.targets = new Target[3];
     targets[0] = new Target(226, 288, 88, 66, this.cols, this.rows, 0); // lower circle
-    targets[1] = new Target(140, 161, 92, 67, this.cols, this.rows, 1); // top left circle
-    targets[2] = new Target(484, 217, 100, 87, this.cols, this.rows, 2); // right cicle
+    targets[1] = new Target(47, 87, 92, 67, this.cols, this.rows, 1); // top left circle
+    targets[2] = new Target(484, 138, 100, 87, this.cols, this.rows, 2); // right cicle
     
     createZones();
   }

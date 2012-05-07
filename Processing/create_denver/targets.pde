@@ -10,8 +10,13 @@ class Target {
   pointer,
   score = 0,
   completeScore = 90;
-    
-  boolean isComplete = false;
+  
+  String faderVal,
+          faderValLast;
+        
+  boolean isComplete = false,
+          isCompleteLast = false;
+          
   boolean[] zoneStates;
   int[] zoneIds;
 
@@ -58,8 +63,8 @@ class Target {
         score++;
       }
     }
-    
-    if(getScoreAsPercent() >= completeScore) { this.isComplete = true; }
+    setFaderVal();
+    if(getScoreAsPercent() >= this.completeScore) { this.isComplete = true; }
   }
 
 
@@ -77,6 +82,10 @@ class Target {
   
   float getScoreAsDecimal(){
     return getScoreAsPercent() / 100;  
+  }
+  
+  void setFaderVal(){
+    this.faderVal = ( getScoreAsPercent() == 0) ? "stop" : "bang";
   }
   
   void resetComplete() {
