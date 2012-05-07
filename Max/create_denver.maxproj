@@ -2,7 +2,7 @@
 	"name" : "create_denver",
 	"version" : 1,
 	"creationdate" : -876158010,
-	"modificationdate" : -875812604,
+	"modificationdate" : -875738513,
 	"viewrect" : [ 25.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -73,6 +73,11 @@
 ,
 		"code" : 		{
 			"levelcontroller.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
+			"truthy.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}
