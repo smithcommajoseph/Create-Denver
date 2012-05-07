@@ -58,10 +58,9 @@ class Level{
     
     //create targets
     this.targets = new Target[4];
-    targets[0] = new Target(72, 82, 148, 109, this.cols, this.rows, 0);
-    targets[1] = new Target(0, 195, 197, 231, this.cols, this.rows, 1);
-    targets[2] = new Target(266, 175, 112, 116, this.cols, this.rows, 2);
-    targets[3] = new Target(448, 280, 192, 141, this.cols, this.rows, 3);
+    targets[0] = new Target(397, 85, 274, 374, this.cols, this.rows, 0); // armoir thing
+    targets[1] = new Target(772, 180, 128, 52, this.cols, this.rows, 1); // books
+    targets[2] = new Target(200, 660, 102, 75, this.cols, this.rows, 2); // stub circle
     
     createZones();
   }
@@ -87,10 +86,9 @@ class Level{
     
     //create targets
     this.targets = new Target[4];
-    targets[0] = new Target(72, 82, 148, 109, this.cols, this.rows, 0);
-    targets[1] = new Target(0, 195, 197, 231, this.cols, this.rows, 1);
-    targets[2] = new Target(266, 175, 112, 116, this.cols, this.rows, 2);
-    targets[3] = new Target(448, 280, 192, 141, this.cols, this.rows, 3);
+    targets[0] = new Target(362, 466, 138, 98, this.cols, this.rows, 0); // lower circle
+    targets[1] = new Target(82, 153, 138, 98, this.cols, this.rows, 1); // top left circle
+    targets[2] = new Target(626, 210, 153, 130, this.cols, this.rows, 2); // right cicle
     
     createZones();
   }
