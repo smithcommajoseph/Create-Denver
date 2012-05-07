@@ -30,6 +30,20 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 295.285645, 552.0, 33.0, 18.0 ],
+					"text" : "stop"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-129",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -118,31 +132,6 @@
 					"outlettype" : [ "float", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 158.785599, 537.470093, 50.0, 20.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-87",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 329.798523, 571.727295, 33.0, 18.0 ],
-					"text" : "stop"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-85",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 295.285645, 571.727295, 20.0, 20.0 ]
 				}
 
 			}
@@ -290,9 +279,9 @@
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1507.900024, 132.570938, 114.0, 20.0 ],
+					"numoutlets" : 12,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 1507.900024, 132.570938, 231.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
@@ -339,7 +328,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1266.748047, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_3.png"
 				}
 
 			}
@@ -408,7 +397,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 700.845947, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_2.png"
 				}
 
 			}
@@ -491,7 +480,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 128.512863, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_1.png"
 				}
 
 			}
@@ -505,7 +494,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 129.512863, 137.385742, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.jpg"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.jpg"
 				}
 
 			}
@@ -1259,6 +1248,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-77", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1467,6 +1465,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-77", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1612,25 +1619,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-85", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 339.298523, 595.727295, 304.785645, 595.727295 ],
-					"source" : [ "obj-87", 0 ]
 				}
 
 			}
