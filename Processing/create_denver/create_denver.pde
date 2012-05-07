@@ -121,8 +121,8 @@ void sendOSC() {
   if(level.hasZones()){
     OscMessage targetsData = new OscMessage( Constants.oscNamespace+"/targets" );
     for (int i=0; i<level.targets.length; i++) {
-      targetsData.add( level.targets[i].getActiveState() );
-      targetsData.add( level.targets[i].getScore() );
+      targetsData.add( level.targets[i].getIsComplete() );
+      targetsData.add( level.targets[i].getScoreAsDecimal() );
     }
     oscP5.send(targetsData,remote);
   }

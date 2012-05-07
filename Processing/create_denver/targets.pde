@@ -9,9 +9,9 @@ class Target {
   totalKeys, 
   pointer,
   score = 0,
-  state = 0;
+  completeScore = 90;
     
-  boolean wasActive = false;
+  boolean isComplete = false;
   boolean[] zoneStates;
   int[] zoneIds;
 
@@ -59,27 +59,28 @@ class Target {
       }
     }
     
-    if(getScore() >= 90) { this.wasActive = true; }
+    if(getScoreAsPercent() >= completeScore) { this.isComplete = true; }
   }
 
-  int getState() {
-    return this.state;
-  }
-
-  boolean getActiveState() {
-    return this.wasActive;
-  }
 
   Target getTarget() {
     return this;
   }
-
-  void resetActive() {
-    this.wasActive = false;
+  
+  boolean getIsComplete() {
+    return this.isComplete;
   }
 
-  int getScore(){
+  int getScoreAsPercent(){
     return round(map(this.score, 0, this.totalKeys, 0, 100));
+  }
+  
+  float getScoreAsDecimal(){
+    return getScoreAsPercent() / 100;  
+  }
+  
+  void resetComplete() {
+    this.isComplete = false;
   }
   
   void resetScore() {
