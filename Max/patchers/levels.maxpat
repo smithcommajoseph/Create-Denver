@@ -7,7 +7,7 @@
 			"revision" : 4
 		}
 ,
-		"rect" : [ 243.0, 44.0, 1197.0, 826.0 ],
+		"rect" : [ 61.0, 44.0, 1197.0, 826.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -328,7 +328,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1266.748047, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_3.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
 				}
 
 			}
@@ -397,7 +397,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 700.845947, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_2.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
 				}
 
 			}
@@ -480,7 +480,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 128.512863, 351.612762, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_2_1.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
 				}
 
 			}
@@ -494,7 +494,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 129.512863, 137.385742, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.jpg"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.jpg"
 				}
 
 			}
@@ -1465,9 +1465,30 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-117", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"midpoints" : [ 1555.945435, 344.520508, 168.285599, 344.520508 ],
+					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-118", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"midpoints" : [ 1575.218262, 344.520508, 234.285599, 344.520508 ],
+					"source" : [ "obj-5", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 1517.400024, 285.0, 1242.0, 285.0, 1242.0, 588.0, 304.785645, 588.0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
