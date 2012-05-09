@@ -11,10 +11,9 @@ class Target {
   score = 0,
   completeScore = 90;
   
-  String faderVal,
-          faderValLast;
-        
-  boolean isComplete = false,
+  boolean isActive = false,
+          isActiveLast = false,
+          isComplete = false,
           isCompleteLast = false;
           
   boolean[] zoneStates;
@@ -63,7 +62,7 @@ class Target {
         score++;
       }
     }
-    setFaderVal();
+    setIsActive();
     if(getScoreAsPercent() >= this.completeScore) { this.isComplete = true; }
   }
 
@@ -84,8 +83,8 @@ class Target {
     return getScoreAsPercent() / 100;  
   }
   
-  void setFaderVal(){
-    this.faderVal = ( getScoreAsPercent() == 0) ? "stop" : "bang";
+  void setIsActive(){
+    this.isActive = ( getScoreAsPercent() == 0) ? false : true;
   }
   
   void resetComplete() {

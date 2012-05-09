@@ -127,35 +127,40 @@ void sendOSC() {
 //      println("/targets/target_"+i+"/isComplete");
 //      println(isComplete != isCompleteLast);
         //isComplete data
-        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
-        isCompleteData.add( level.targets[i].isComplete );
-        oscP5.send(isCompleteData, remote);
-        
-      if(isComplete != isCompleteLast){
-        
-//        //isComplete data
 //        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
 //        isCompleteData.add( level.targets[i].isComplete );
 //        oscP5.send(isCompleteData, remote);
         
-        OscMessage faderValData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/faderVal" );
-        faderValData.add( "stop" );
-        oscP5.send(faderValData, remote);
+      if(isComplete != isCompleteLast){
+        
+        //isComplete data
+        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
+        isCompleteData.add( "bang" );
+        oscP5.send(isCompleteData, remote);
+        println("target"+i+" isComplete");
+        
+        OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/inactive" );
+        isActiveData.add( "bang" );
+        oscP5.send(isActiveData, remote);
+        println("target"+i+" inactive");
         
         level.targets[i].isCompleteLast = level.targets[i].isComplete;
-      }
-      
-      //faderVal data
-      String faderVal = level.targets[i].faderVal,
-              faderValLast = level.targets[i].faderValLast;
-      
-      if(faderVal != faderValLast){
-        OscMessage faderValData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/faderVal" );
-        faderValData.add( level.targets[i].faderVal );
-        oscP5.send(faderValData, remote);
+      } else {
+       
+        //isActive data
+        boolean isActive = level.targets[i].isActive,
+                isActiveLast = level.targets[i].isActiveLast;
         
-        level.targets[i].faderValLast = level.targets[i].faderVal;
-      }        
+        if(isActive != isActiveLast){
+          OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/active" );
+          isActiveData.add( "bang" );
+          oscP5.send(isActiveData, remote);
+          println("target"+i+" active");
+          
+          level.targets[i].isActiveLast = level.targets[i].isActive;
+        } 
+      
+      }       
       
     }
    

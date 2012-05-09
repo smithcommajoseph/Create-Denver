@@ -1,6 +1,6 @@
 // inlets and outlets
 inlets = 1;
-outlets = 4;
+outlets = 5;
 
 //Constants
 	LEVEL_OVERLAY_NAME	= "_overlay_",
@@ -43,4 +43,5 @@ function sendData(ob){
 	outlet(1, ob.overlay_1);
 	outlet(2, ob.overlay_2);
 	outlet(3, ob.overlay_3);
+	outlet(4, "bang");
 }
