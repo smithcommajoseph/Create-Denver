@@ -55,11 +55,10 @@ class Target {
   }
 
   void updatePerhaps(int zid) {
-    
     for (int i=0; i<this.totalKeys; i++) {
       if (this.zoneIds[i] == zid && this.zoneStates[i] == false) {
         this.zoneStates[i] = true;
-        score++;
+        this.score++;
       }
     }
     setIsActive();
@@ -84,7 +83,7 @@ class Target {
   }
   
   void setIsActive(){
-    this.isActive = ( getScoreAsPercent() == 0) ? false : true;
+    this.isActive = ( this.score == 0) ? false : true;
   }
   
   void resetComplete() {
