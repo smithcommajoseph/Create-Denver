@@ -88,20 +88,15 @@ class Zone{
    */
   void draw(int[] depthVals){
     
-    if(this.wasActive == true){
-      rectHim();
-    } else {
+//    if(this.wasActive == true){
+//      rectHim();
+//    } else {
       boolean isActive = isActive(depthVals);
       if(isActive == true){
         this.wasActive = true;
-        this.state = this.maxStates;
         rectHim();
-      } else {
-        if(this.state != 0){
-          this.state = ceil(this.halfState);  
-        }
       }
-    }
+//    }
     
   }
   
