@@ -11,7 +11,7 @@ interface Constants {
   public static final int sizeMod = 1;
   public static final int minZ = 610;
   public static final int maxZ = 1525;
-  public static final int stages = 3 - 1;
+  public static final int stages = 4 - 1;
   public static final String oscNamespace = "/createdenver";
 }
 
@@ -174,6 +174,14 @@ void sendOSC() {
     oscP5.send(levelData, remote);
     
     lastLevel = currentLevel;
+  }
+}
+
+void oscEvent(OscMessage theOscMessage) {
+  String addr = theOscMessage.addrPattern(); // Creates a string out of the OSC message
+   if (addr.indexOf("/frommax/trannycall") != -1) {
+    println(theOscMessage.get(0).intValue());
+    level.transitionDone = true;
   }
 }
 
