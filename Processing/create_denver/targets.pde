@@ -8,10 +8,18 @@ class Target {
   zoneRows,
   totalKeys, 
   pointer,
+    
   score = 0,
-  state = 0;
-
-  boolean wasActive = false;
+  completeScore = 90,
+  
+  /*
+   * 0 = inactive
+   * 1 = active
+   * 2 = complete
+   */
+  state = 0,
+  stateLast = 0;
+          
   boolean[] zoneStates;
   int[] zoneIds;
 
@@ -50,48 +58,48 @@ class Target {
     }
   }
 
-  void updatePerhaps(int zid) {
-    
-    for (int i=0; i<this.totalKeys; i++) {
-      if (this.zoneIds[i] == zid && this.zoneStates[i] == false) {
-        this.zoneStates[i] = true;
-        score++;
+  void update(Zone[] zoneArr){
+    if(getState() != 2){
+      int activeCount = 0;
+      for(int i=0; i<this.zoneIds.length; i++){
+        if(zoneArr[this.zoneIds[i]].getState() == 1 ){
+          activeCount++;
+        }
       }
-    }
+      
+      if(activeCount == 0){ 
+        this.score = 0;
+      }
+      else {
+        this.score += activeCount;
+      }  
+    } 
+  }
+
+  int getState(){
+    int returnState;
     
-    if(getScore() >= 90) { this.wasActive = true; }
+    if(this.score == 0)                                  { returnState = 0; }
+    else if ( getScoreAsPercent() > this.completeScore)  { returnState = 2; }
+    else                                                 { returnState = 1; }
+    
+    this.state = returnState;
+    return returnState;
   }
 
-  int getState() {
-    return this.state;
+  int getScoreAsPercent(){
+    //throttled score
+    int localScore = floor(this.score * 0.3);
+    return round(map(localScore, 0, this.totalKeys, 0, 100));
   }
-
-  boolean getActiveState() {
-    return this.wasActive;
-  }
-
-  Target getTarget() {
-    return this;
-  }
-
-  void resetActive() {
-    this.wasActive = false;
-  }
-
-  int getScore(){
-    return round(map(this.score, 0, this.totalKeys, 0, 100));
+  
+  float getScoreAsDecimal(){
+    return getScoreAsPercent() / 100;  
   }
   
   void resetScore() {
     this.score = 0;
   }
   
-  String getMessageName(){
-    return "/target_"+this.pointer;
-  }
-  
-  boolean getMessageVal(){
-    return this.wasActive; 
-  }
 }
 

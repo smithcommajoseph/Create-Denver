@@ -57,11 +57,10 @@ class Level{
     this.rows = 60;
     
     //create targets
-    this.targets = new Target[4];
-    targets[0] = new Target(72, 82, 148, 109, this.cols, this.rows, 0);
-    targets[1] = new Target(0, 195, 197, 231, this.cols, this.rows, 1);
-    targets[2] = new Target(266, 175, 112, 116, this.cols, this.rows, 2);
-    targets[3] = new Target(448, 280, 192, 141, this.cols, this.rows, 3);
+    this.targets = new Target[3];
+    targets[0] = new Target(248, 52, 171, 231, this.cols, this.rows, 0); // armoir thing
+    targets[1] = new Target(483, 111, 81, 31, this.cols, this.rows, 1); // books
+    targets[2] = new Target(125, 417, 66, 39, this.cols, this.rows, 2); // stub circle
     
     createZones();
   }
@@ -86,11 +85,10 @@ class Level{
     this.rows = 60;
     
     //create targets
-    this.targets = new Target[4];
-    targets[0] = new Target(72, 82, 148, 109, this.cols, this.rows, 0);
-    targets[1] = new Target(0, 195, 197, 231, this.cols, this.rows, 1);
-    targets[2] = new Target(266, 175, 112, 116, this.cols, this.rows, 2);
-    targets[3] = new Target(448, 280, 192, 141, this.cols, this.rows, 3);
+    this.targets = new Target[3];
+    targets[0] = new Target(226, 288, 88, 66, this.cols, this.rows, 0); // lower circle
+    targets[1] = new Target(47, 87, 92, 67, this.cols, this.rows, 1); // top left circle
+    targets[2] = new Target(484, 138, 100, 87, this.cols, this.rows, 2); // right cicle
     
     createZones();
   }
@@ -138,7 +136,7 @@ class Level{
       int len = this.targets.length,
       cnt = 0;
       for(int i=0; i<len; i++){
-        if(this.targets[i].wasActive == true){
+        if(this.targets[i].getState() == 2){
           cnt++;
         }
       }

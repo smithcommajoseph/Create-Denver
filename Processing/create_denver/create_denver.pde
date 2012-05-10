@@ -11,7 +11,8 @@ interface Constants {
   public static final int sizeMod = 1;
   public static final int minZ = 610;
   public static final int maxZ = 1525;
-  public static final int stages = 3 - 1;
+  public static final int stages = 4 - 1;
+  public static final String oscNamespace = "/createdenver";
 }
 
 /*
@@ -75,7 +76,7 @@ void draw() {
     println("currentLevel: "+currentLevel);
     level = initLevel();
     
-    sendOSC();
+//    sendOSC();
   }
 
   background(0);
@@ -84,7 +85,7 @@ void draw() {
     kinect.update();
     int[] depthValues = kinect.depthMap();
     // draw and score (score must happen after draw)
-    level.zones.draw(depthValues);
+    level.zones.draw(reverseXVals(depthValues));
     scoredActiveZones = level.zones.getScoredActiveZones();
   }
 
@@ -116,24 +117,68 @@ int[] reverseXVals(int[] depthValues) {
 }
 
 void sendOSC() {
-//  for (int i=0; i<level.targets.length; i++) {
-//    OscMessage isActive = new OscMessage( level.targets[i].getMessageName() );
-//    isActive.add( level.targets[i].getMessageVal() );
-//    oscP5.send(isActive, remote);
-//  }
-
-  if(lastLevel != currentLevel){
-    //send level
-    OscMessage levelcount = new OscMessage( "/createdenver/level" );
-    levelcount.add( currentLevel );
-    oscP5.send(levelcount, remote);
+  //send target data
+  if(level.hasZones()){
+    
+    for (int i=0; i<level.targets.length; i++) {
+      int state = level.targets[i].getState();
+      
+      if(state != level.targets[i].stateLast){
+        
+        // active
+        if(state == 1) {
+          OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/active" );
+          isActiveData.add( "bang" );
+          oscP5.send(isActiveData, remote);
+          println("target"+i+" active");       
+        } 
+        
+        // complete
+        if(state == 2){
+          OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
+          isCompleteData.add( "bang" );
+          oscP5.send(isCompleteData, remote);
+          println("target"+i+" isComplete");
+        }
+        
+        // inactive
+        if(state == 0 || state == 2){
+          OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/inactive" );
+          isActiveData.add( "bang" );
+          oscP5.send(isActiveData, remote);
+          println("target"+i+" inactive");
+        }
+      
+        level.targets[i].stateLast = state;
+      }
   
-    //send level type
-    OscMessage leveltype = new OscMessage( "/createdenver/level_type" );
-    leveltype.add( level.type );
-    oscP5.send(leveltype, remote);
+       // active
+      if(state == 1) {
+        OscMessage scoreData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/score" );
+        scoreData.add( level.targets[i].getScoreAsPercent() );
+        oscP5.send(scoreData, remote);
+        println("target"+i+" score "+ level.targets[i].getScoreAsPercent());          
+      } 
+        
+    }
+  }
+  
+  //send level data
+  if(lastLevel != currentLevel){   
+    OscMessage levelData = new OscMessage( Constants.oscNamespace+"/level" );
+    levelData.add( currentLevel );
+    levelData.add( level.type );
+    oscP5.send(levelData, remote);
     
     lastLevel = currentLevel;
+  }
+}
+
+void oscEvent(OscMessage theOscMessage) {
+  String addr = theOscMessage.addrPattern(); // Creates a string out of the OSC message
+   if (addr.indexOf("/frommax/trannycall") != -1) {
+    println(theOscMessage.get(0).intValue());
+    level.transitionDone = true;
   }
 }
 

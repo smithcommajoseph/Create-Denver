@@ -71,20 +71,19 @@ class Zones{
     for(int i=0; i<this.zonesTotal; i++){
       this.zoneArr[i].draw(depthVals);
       
-      boolean wasActive = this.zoneArr[i].getActiveState();
-      if(wasActive) { 
-        for(int t=0; t<targetArr.length; t++){ targetArr[t].updatePerhaps(i); }
-        this.actives++; 
-      }
-      
+      if(this.zoneArr[i].getState() == 1) { this.actives++; }
       this.score += this.zoneArr[i].getState();
+    }
+       
+    for(int t=0; t<targetArr.length; t++){ 
+      targetArr[t].update(this.zoneArr);
     }
   }
   
   void resetActives(){
     this.actives = 0;
     for(int i=0; i<this.zonesTotal; i++){
-      this.zoneArr[i].resetActive();
+      this.zoneArr[i].resetState();
     }
   }
   

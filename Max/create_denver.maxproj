@@ -2,8 +2,8 @@
 	"name" : "create_denver",
 	"version" : 1,
 	"creationdate" : -876158010,
-	"modificationdate" : -875816077,
-	"viewrect" : [ 25.0, 69.0, 300.0, 500.0 ],
+	"modificationdate" : -875605030,
+	"viewrect" : [ 131.0, 341.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -24,18 +24,18 @@
 				"local" : 1
 			}
 ,
-			"level_bg_0.jpg" : 			{
-				"kind" : "imagefile",
-				"local" : 1
+			"level_trans_3.mov" : 			{
+				"kind" : "moviefile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Users/joseph/Projects/create_denver/Max/media/level_trans_3.mov",
+					"projectrelativepath" : "../Max/media/level_trans_3.mov"
+				}
+
 			}
 ,
 			"level_trans_1.mov" : 			{
 				"kind" : "moviefile",
-				"local" : 1
-			}
-,
-			"level_bg_2.jpg" : 			{
-				"kind" : "imagefile",
 				"local" : 1
 			}
 ,
@@ -68,6 +68,21 @@
 				"kind" : "imagefile",
 				"local" : 1
 			}
+,
+			"level_bg_2.mov" : 			{
+				"kind" : "moviefile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_2.mov",
+					"projectrelativepath" : "../Max/media/level_bg_2.mov"
+				}
+
+			}
+,
+			"level_bg_0.mov" : 			{
+				"kind" : "moviefile",
+				"local" : 1
+			}
 
 		}
 ,
@@ -75,6 +90,21 @@
 			"levelcontroller.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
+			}
+,
+			"truthy.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
+			"targetcontroller.js" : 			{
+				"kind" : "javascript",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Users/joseph/Projects/create_denver/Max/code/targetcontroller.js",
+					"projectrelativepath" : "../Max/code/targetcontroller.js"
+				}
+
 			}
 
 		}
