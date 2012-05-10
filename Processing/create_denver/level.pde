@@ -64,7 +64,7 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(272, 133, 126, 231, this.cols, this.rows, 0); // armoir thing
+    targets[0] = new Target(278, 140, 147, 72, this.cols, this.rows, 0); // armoir thing
     targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
     targets[2] = new Target(425, 313, 172, 124, this.cols, this.rows, 2); // sofa (king wee todd did)
     
