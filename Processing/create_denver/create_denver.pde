@@ -11,7 +11,7 @@ interface Constants {
   public static final int sizeMod = 1;
   public static final int minZ = 610;
   public static final int maxZ = 1525;
-  public static final int stages = 4 - 1;
+  public static final int stages = 7; //0 based
   public static final String oscNamespace = "/createdenver";
 }
 

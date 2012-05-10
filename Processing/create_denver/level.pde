@@ -39,6 +39,12 @@ class Level{
       case 5:
         initTrans3();
         break;
+      case 6:
+        initLevel4();
+        break;
+      case 7:
+        initTrans4();
+        break;
     }
   }
   
@@ -111,6 +117,14 @@ class Level{
     this.type = "level";
     this.cols = 80;
     this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(151, 192, 64, 136, this.cols, this.rows, 0); // antelop
+    targets[1] = new Target(37, 119, 99, 80, this.cols, this.rows, 1); // eagle
+    targets[2] = new Target(502, 57, 75, 287, this.cols, this.rows, 2); // tree
+    
+    createZones();
   }
   
   /*
@@ -119,6 +133,34 @@ class Level{
    * Initializes Transition 3
    */
   void initTrans3(){
+    this.type = "transistion";
+  }
+  
+  /*
+   * initLevel4
+   *
+   * Initializes Level 4
+   */ 
+  void initLevel4(){
+    this.type = "level";
+    this.cols = 80;
+    this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(168, 415, 58, 25, this.cols, this.rows, 0); // ???
+    targets[1] = new Target(234, 184, 30, 56, this.cols, this.rows, 1); // puppet
+    targets[2] = new Target(428, 153, 45, 31, this.cols, this.rows, 2); // ???
+    
+    createZones();
+  }
+  
+  /*
+   * initTrans4
+   *
+   * Initializes Transition 4
+   */
+  void initTrans4(){
     this.type = "transistion";
   }
   

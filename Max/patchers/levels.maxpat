@@ -7,7 +7,7 @@
 			"revision" : 4
 		}
 ,
-		"rect" : [ 609.0, 44.0, 1440.0, 826.0 ],
+		"rect" : [ 0.0, 44.0, 1440.0, 826.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1285,7 +1285,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1759.167969, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_6_3.png"
 				}
 
 			}
@@ -1354,7 +1354,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1193.265869, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_6_2.png"
 				}
 
 			}
@@ -1437,7 +1437,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 620.9328, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_6_1.png"
 				}
 
 			}
@@ -1451,7 +1451,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 615.9328, 143.435745, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.mov"
+					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_6.mov"
 				}
 
 			}
