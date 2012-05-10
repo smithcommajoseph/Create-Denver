@@ -58,9 +58,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(434, 213, 197, 368, this.cols, this.rows, 0); // armoir thing
-    targets[1] = new Target(244, 234, 124, 56, this.cols, this.rows, 1); // books
-    targets[2] = new Target(704, 498, 244, 204, this.cols, this.rows, 2); // sofa (king wee todd did)
+    targets[0] = new Target(272, 133, 126, 231, this.cols, this.rows, 0); // armoir thing
+    targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
+    targets[2] = new Target(425, 313, 172, 124, this.cols, this.rows, 2); // sofa (king wee todd did)
     
     createZones();
   }
@@ -86,9 +86,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(661, 268, 70, 110, this.cols, this.rows, 0); // right ice
-    targets[1] = new Target(161, 141, 176, 146, this.cols, this.rows, 1); // lights
-    targets[2] = new Target(305, 369, 168, 174, this.cols, this.rows, 2); // left ice
+    targets[0] = new Target(413, 169, 50, 65, this.cols, this.rows, 0); // right ice
+    targets[1] = new Target(97, 90, 102, 80, this.cols, this.rows, 1); // lights
+    targets[2] = new Target(197, 236, 95, 95, this.cols, this.rows, 2); // left ice
     
     createZones();
   }
