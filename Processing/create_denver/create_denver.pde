@@ -121,49 +121,46 @@ void sendOSC() {
   if(level.hasZones()){
     
     for (int i=0; i<level.targets.length; i++) {
-      boolean isComplete = level.targets[i].isComplete,
-              isCompleteLast = level.targets[i].isCompleteLast;
+      int state = level.targets[i].getState();
       
-//      println("/targets/target_"+i+"/isComplete");
-//      println(isComplete != isCompleteLast);
-        //isComplete data
-//        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
-//        isCompleteData.add( level.targets[i].isComplete );
-//        oscP5.send(isCompleteData, remote);
+      if(state != level.targets[i].stateLast){
         
-      if(isComplete != isCompleteLast){
-        
-        //isComplete data
-        OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
-        isCompleteData.add( "bang" );
-        oscP5.send(isCompleteData, remote);
-        println("target"+i+" isComplete");
-        
-        OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/inactive" );
-        isActiveData.add( "bang" );
-        oscP5.send(isActiveData, remote);
-        println("target"+i+" inactive");
-        
-        level.targets[i].isCompleteLast = level.targets[i].isComplete;
-      } else {
-       
-        //isActive data
-        boolean isActive = level.targets[i].isActive,
-                isActiveLast = level.targets[i].isActiveLast;
-        
-        if(isActive != isActiveLast){
+        // active
+        if(state == 1) {
           OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/active" );
           isActiveData.add( "bang" );
           oscP5.send(isActiveData, remote);
-          println("target"+i+" active");
-          
-          level.targets[i].isActiveLast = level.targets[i].isActive;
+          println("target"+i+" active");       
         } 
+        
+        // complete
+        if(state == 2){
+          OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
+          isCompleteData.add( "bang" );
+          oscP5.send(isCompleteData, remote);
+          println("target"+i+" isComplete");
+        }
+        
+        // inactive
+        if(state == 0 || state == 2){
+          OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/inactive" );
+          isActiveData.add( "bang" );
+          oscP5.send(isActiveData, remote);
+          println("target"+i+" inactive");
+        }
       
-      }       
-      
+        level.targets[i].stateLast = state;
+      }
+  
+       // active
+      if(state == 1) {
+        OscMessage scoreData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/score" );
+        scoreData.add( level.targets[i].getScoreAsPercent() );
+        oscP5.send(scoreData, remote);
+        println("target"+i+" score "+ level.targets[i].getScoreAsPercent());          
+      } 
+        
     }
-   
   }
   
   //send level data

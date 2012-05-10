@@ -27,14 +27,12 @@ class Zone{
       endX,
       endY,
       
-      maxStates = 10,
-      state = 0,
-      opacityMod = 100/maxStates;
-  
-  float halfState = 0;
-  
-  boolean wasActive = false;
-  
+      /*
+       * 0 = inactive
+       * 1 = active
+       */
+      state = 0;
+
   /*
    * Constructor
    */ 
@@ -88,15 +86,11 @@ class Zone{
    */
   void draw(int[] depthVals){
     
-//    if(this.wasActive == true){
-//      rectHim();
-//    } else {
-      boolean isActive = isActive(depthVals);
-      if(isActive == true){
-        this.wasActive = true;
-        rectHim();
-      }
-//    }
+    if(isActive(depthVals) == true){
+      this.state = 1;
+      rectHim();
+    }
+    else { this.state = 0; }
     
   }
   
@@ -121,26 +115,8 @@ class Zone{
     return this.state;
   }
   
-  boolean getActiveState(){
-    return this.wasActive;  
-  }
-  
-  /*
-   * getZone
-   *
-   * will return the Zone in it's fullness
-   */
-  Zone getZone(){
-    return this;
-  }
-  
-  /*
-   * resetActive
-   *
-   * reset Zone's active state
-   */
-  void resetActive(){
-    this.wasActive = false;  
+  void resetState(){
+    this.state = 0;
   }
   
 }

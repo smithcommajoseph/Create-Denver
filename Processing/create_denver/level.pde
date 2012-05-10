@@ -136,7 +136,7 @@ class Level{
       int len = this.targets.length,
       cnt = 0;
       for(int i=0; i<len; i++){
-        if(this.targets[i].isComplete == true){
+        if(this.targets[i].getState() == 2){
           cnt++;
         }
       }

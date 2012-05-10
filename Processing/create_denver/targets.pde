@@ -8,13 +8,17 @@ class Target {
   zoneRows,
   totalKeys, 
   pointer,
+    
   score = 0,
-  completeScore = 90;
+  completeScore = 90,
   
-  boolean isActive = false,
-          isActiveLast = false,
-          isComplete = false,
-          isCompleteLast = false;
+  /*
+   * 0 = inactive
+   * 1 = active
+   * 2 = complete
+   */
+  state = 0,
+  stateLast = 0;
           
   boolean[] zoneStates;
   int[] zoneIds;
@@ -54,40 +58,43 @@ class Target {
     }
   }
 
-  void updatePerhaps(int zid) {
-    for (int i=0; i<this.totalKeys; i++) {
-      if (this.zoneIds[i] == zid && this.zoneStates[i] == false) {
-        this.zoneStates[i] = true;
-        this.score++;
+  void update(Zone[] zoneArr){
+    if(getState() != 2){
+      int activeCount = 0;
+      for(int i=0; i<this.zoneIds.length; i++){
+        if(zoneArr[this.zoneIds[i]].getState() == 1 ){
+          activeCount++;
+        }
       }
-    }
-    setIsActive();
-    if(getScoreAsPercent() >= this.completeScore) { this.isComplete = true; }
+      
+      if(activeCount == 0){ 
+        this.score = 0;
+      }
+      else {
+        this.score += activeCount;
+      }  
+    } 
   }
 
-
-  Target getTarget() {
-    return this;
-  }
-  
-  boolean getIsComplete() {
-    return this.isComplete;
+  int getState(){
+    int returnState;
+    
+    if(this.score == 0)                                  { returnState = 0; }
+    else if ( getScoreAsPercent() > this.completeScore)  { returnState = 2; }
+    else                                                 { returnState = 1; }
+    
+    this.state = returnState;
+    return returnState;
   }
 
   int getScoreAsPercent(){
-    return round(map(this.score, 0, this.totalKeys, 0, 100));
+    //throttled score
+    int localScore = floor(this.score * 0.3);
+    return round(map(localScore, 0, this.totalKeys, 0, 100));
   }
   
   float getScoreAsDecimal(){
     return getScoreAsPercent() / 100;  
-  }
-  
-  void setIsActive(){
-    this.isActive = ( this.score == 0) ? false : true;
-  }
-  
-  void resetComplete() {
-    this.isComplete = false;
   }
   
   void resetScore() {
