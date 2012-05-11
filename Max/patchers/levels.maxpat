@@ -4,10 +4,10 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 0,
-			"revision" : 4
+			"revision" : 5
 		}
 ,
-		"rect" : [ 0.0, 69.0, 1038.0, 726.0 ],
+		"rect" : [ 46.0, 44.0, 1038.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -27,6 +27,62 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2021.466553, 645.890015, 57.0, 18.0 ],
+					"text" : "$1, bang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-63",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2025.466553, 681.16095, 125.0, 20.0 ],
+					"text" : "scale 0 100 1000 100"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-36",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1455.564331, 644.890015, 57.0, 18.0 ],
+					"text" : "$1, bang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-37",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1459.564331, 680.16095, 125.0, 20.0 ],
+					"text" : "scale 0 100 1000 100"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -50,7 +106,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 891.231384, 676.61731, 125.0, 20.0 ],
-					"text" : "scale 0 100 1000 300"
+					"text" : "scale 0 100 1000 100"
 				}
 
 			}
@@ -1313,7 +1369,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1759.167969, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_8_3.png"
 				}
 
 			}
@@ -1382,7 +1438,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1193.265869, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_8_2.png"
 				}
 
 			}
@@ -1465,7 +1521,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 620.9328, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_8_1.png"
 				}
 
 			}
@@ -1479,7 +1535,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 615.9328, 143.435745, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.mov"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_bg_8.mov"
 				}
 
 			}
@@ -2969,6 +3025,33 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-36", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-154", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3075,7 +3158,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
+					"destination" : [ "obj-14", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-49", 3 ]
@@ -3149,6 +3232,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-51", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-55", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3204,10 +3296,28 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-36", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-62", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-85", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-171", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-63", 0 ]
 				}
 
 			}
@@ -3492,7 +3602,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "levelcontroller.js",
-				"bootpath" : "/Users/joseph/Projects/create_denver/Max/code",
+				"bootpath" : "/Users/Zack/Create-Denver/Max/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
