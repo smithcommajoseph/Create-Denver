@@ -43,7 +43,10 @@ class Level{
         initLevel4();
         break;
       case 7:
-        initTrans4();
+        initLevel5();
+        break;
+      case 8:
+        initTrans5();
         break;
     }
   }
@@ -52,11 +55,12 @@ class Level{
   /* Level Initializers */  
   /**********************/
   
+  
   /*
    * initLevel1
    *
    * Initializes Level 1
-   */
+   */ 
   void initLevel1(){
     this.type = "level";
     this.cols = 80;
@@ -64,9 +68,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(278, 140, 147, 72, this.cols, this.rows, 0); // armoir thing
-    targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
-    targets[2] = new Target(425, 313, 172, 124, this.cols, this.rows, 2); // sofa (king wee todd did)
+    targets[0] = new Target(300, 87, 44, 60, this.cols, this.rows, 0); // ???
+    targets[1] = new Target(300, 148, 44, 1, this.cols, this.rows, 1); // puppet
+    targets[2] = new Target(300, 149, 44, 1, this.cols, this.rows, 2); // ???
     
     createZones();
   }
@@ -92,9 +96,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(413, 169, 50, 65, this.cols, this.rows, 0); // right ice
-    targets[1] = new Target(97, 90, 102, 80, this.cols, this.rows, 1); // lights
-    targets[2] = new Target(197, 236, 95, 95, this.cols, this.rows, 2); // left ice
+    targets[0] = new Target(278, 140, 147, 72, this.cols, this.rows, 0); // armoir thing
+    targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
+    targets[2] = new Target(425, 313, 172, 124, this.cols, this.rows, 2); // sofa (king wee todd did)
     
     createZones();
   }
@@ -103,17 +107,45 @@ class Level{
    * initTrans2
    *
    * Initializes Transition 2
-   */ 
+   */
   void initTrans2(){
     this.type = "transistion";
   }
-
+  
   /*
    * initLevel3
    *
    * Initializes Level 3
-   */ 
+   */
   void initLevel3(){
+    this.type = "level";
+    this.cols = 80;
+    this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(413, 169, 50, 65, this.cols, this.rows, 0); // right ice
+    targets[1] = new Target(97, 90, 102, 80, this.cols, this.rows, 1); // lights
+    targets[2] = new Target(197, 236, 95, 95, this.cols, this.rows, 2); // left ice
+    
+    createZones();
+  }
+  
+  /*
+   * initTrans3
+   *
+   * Initializes Transition 3
+   */ 
+  void initTrans3(){
+    this.type = "transistion";
+  }
+
+  /*
+   * initLevel4
+   *
+   * Initializes Level 4
+   */ 
+  void initLevel4(){
     this.type = "level";
     this.cols = 80;
     this.rows = 60;
@@ -128,20 +160,20 @@ class Level{
   }
   
   /*
-   * initTrans3
+   * initTrans4
    *
-   * Initializes Transition 3
+   * Initializes Transition 4
    */
-  void initTrans3(){
+  void initTrans4(){
     this.type = "transistion";
   }
   
   /*
-   * initLevel4
+   * initLevel5
    *
-   * Initializes Level 4
+   * Initializes Level 5
    */ 
-  void initLevel4(){
+  void initLevel5(){
     this.type = "level";
     this.cols = 80;
     this.rows = 60;
@@ -156,13 +188,14 @@ class Level{
   }
   
   /*
-   * initTrans4
+   * initTrans5
    *
-   * Initializes Transition 4
+   * Initializes Transition 5
    */
-  void initTrans4(){
+  void initTrans5(){
     this.type = "transistion";
   }
+  
   
   void createZones() {
     this.zones = new Zones(this.cols, this.rows, this.targets);
