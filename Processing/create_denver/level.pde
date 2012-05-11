@@ -43,9 +43,12 @@ class Level{
         initLevel4();
         break;
       case 7:
-        initLevel5();
+        initTrans4();
         break;
       case 8:
+        initLevel5();
+        break;
+      case 9:
         initTrans5();
         break;
     }
@@ -69,8 +72,8 @@ class Level{
     //create targets
     this.targets = new Target[3];
     targets[0] = new Target(300, 87, 44, 60, this.cols, this.rows, 0); // ???
-    targets[1] = new Target(300, 148, 44, 1, this.cols, this.rows, 1); // puppet
-    targets[2] = new Target(300, 149, 44, 1, this.cols, this.rows, 2); // ???
+    targets[1] = new Target(300, 148, 44, 10, this.cols, this.rows, 1); // puppet
+    targets[2] = new Target(300, 158, 44, 10, this.cols, this.rows, 2); // ???
     
     createZones();
   }
