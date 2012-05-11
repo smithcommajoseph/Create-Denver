@@ -71,9 +71,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(300, 87, 44, 60, this.cols, this.rows, 0); // ???
-    targets[1] = new Target(300, 148, 44, 10, this.cols, this.rows, 1); // puppet
-    targets[2] = new Target(300, 158, 44, 10, this.cols, this.rows, 2); // ???
+    targets[0] = new Target(300, 87, 44, 60, this.cols, this.rows, 0); // lock
+    targets[1] = new Target(300, 148, 44, 10, this.cols, this.rows, 1); // stub
+    targets[2] = new Target(300, 158, 44, 10, this.cols, this.rows, 2); // stub
     
     createZones();
   }
