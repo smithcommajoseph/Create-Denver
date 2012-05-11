@@ -71,10 +71,12 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(300, 87, 44, 60, this.cols, this.rows, 0); // lock
-    targets[1] = new Target(300, 148, 44, 10, this.cols, this.rows, 1); // stub
-    targets[2] = new Target(300, 158, 44, 10, this.cols, this.rows, 2); // stub
+    targets[0] = new Target(300, 132, 44, 60, this.cols, this.rows, 0); // lock
+    targets[1] = new Target(300, 162, 44, 10, this.cols, this.rows, 1); // stub
+    targets[2] = new Target(300, 172, 44, 10, this.cols, this.rows, 2); // stub
     
+    targets[1].state = 2;
+    targets[2].state = 2;
     createZones();
   }
   
@@ -101,7 +103,7 @@ class Level{
     this.targets = new Target[3];
     targets[0] = new Target(278, 140, 147, 72, this.cols, this.rows, 0); // armoir thing
     targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
-    targets[2] = new Target(425, 313, 172, 124, this.cols, this.rows, 2); // sofa (king wee todd did)
+    targets[2] = new Target(503, 292, 37, 47, this.cols, this.rows, 2); // sofa (king wee todd did)
     
     createZones();
   }

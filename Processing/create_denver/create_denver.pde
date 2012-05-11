@@ -10,7 +10,7 @@ interface Constants {
   public static final int rawHeight = 480;
   public static final int sizeMod = 1;
   public static final int minZ = 2050;
-  public static final int maxZ = 3125;
+  public static final int maxZ = 2950;
   public static final int stages = 9; //0 based
   public static final String oscNamespace = "/createdenver";
 }
@@ -54,7 +54,7 @@ void setup() {
   // Init OSC biz
   oscP5 = new OscP5(this, 60001);
   remote = new NetAddress("127.0.0.1", 60000);
-  merkel = new NetAddress("192.168.0.103", 6000);
+  merkel = new NetAddress("192.168.0.104", 6000);
 
   // Create our Levels
   level = initLevel();
@@ -77,8 +77,7 @@ void draw() {
     }
     println("currentLevel: "+currentLevel);
     level = initLevel();
-    
-//    sendOSC();
+    sendOSC();
   }
 
   background(0);
