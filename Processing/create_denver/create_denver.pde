@@ -54,7 +54,7 @@ void setup() {
   // Init OSC biz
   oscP5 = new OscP5(this, 60001);
   remote = new NetAddress("127.0.0.1", 60000);
-  merkel = new NetAddress("192.168.0.100", 6000);
+  merkel = new NetAddress("192.168.0.103", 6000);
 
   // Create our Levels
   level = initLevel();
