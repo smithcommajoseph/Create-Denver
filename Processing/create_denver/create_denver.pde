@@ -9,9 +9,9 @@ interface Constants {
   public static final int rawWidth = 640;
   public static final int rawHeight = 480;
   public static final int sizeMod = 1;
-  public static final int minZ = 610;
-  public static final int maxZ = 1525;
-  public static final int stages = 4 - 1;
+  public static final int minZ = 2050;
+  public static final int maxZ = 2950;
+  public static final int stages = 9; //0 based
   public static final String oscNamespace = "/createdenver";
 }
 
@@ -32,6 +32,7 @@ lastLevel = 0;
 SimpleOpenNI kinect;
 OscP5 oscP5;
 NetAddress remote;
+NetAddress merkel;
 Zones zones;
 Level level;
 
@@ -53,6 +54,7 @@ void setup() {
   // Init OSC biz
   oscP5 = new OscP5(this, 60001);
   remote = new NetAddress("127.0.0.1", 60000);
+  merkel = new NetAddress("192.168.0.104", 6000);
 
   // Create our Levels
   level = initLevel();
@@ -75,8 +77,7 @@ void draw() {
     }
     println("currentLevel: "+currentLevel);
     level = initLevel();
-    
-//    sendOSC();
+    sendOSC();
   }
 
   background(0);
@@ -85,7 +86,7 @@ void draw() {
     kinect.update();
     int[] depthValues = kinect.depthMap();
     // draw and score (score must happen after draw)
-    level.zones.draw(reverseXVals(depthValues));
+    level.zones.draw(depthValues);
     scoredActiveZones = level.zones.getScoredActiveZones();
   }
 
@@ -130,6 +131,7 @@ void sendOSC() {
           OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/active" );
           isActiveData.add( "bang" );
           oscP5.send(isActiveData, remote);
+          oscP5.send(isActiveData, merkel);
           println("target"+i+" active");       
         } 
         
@@ -138,6 +140,7 @@ void sendOSC() {
           OscMessage isCompleteData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/isComplete" );
           isCompleteData.add( "bang" );
           oscP5.send(isCompleteData, remote);
+          oscP5.send(isCompleteData, merkel);
           println("target"+i+" isComplete");
         }
         
@@ -146,6 +149,7 @@ void sendOSC() {
           OscMessage isActiveData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/inactive" );
           isActiveData.add( "bang" );
           oscP5.send(isActiveData, remote);
+          oscP5.send(isActiveData, merkel);
           println("target"+i+" inactive");
         }
       
@@ -157,6 +161,7 @@ void sendOSC() {
         OscMessage scoreData = new OscMessage( Constants.oscNamespace+"/targets/target_"+i+"/score" );
         scoreData.add( level.targets[i].getScoreAsPercent() );
         oscP5.send(scoreData, remote);
+        oscP5.send(scoreData, merkel);
         println("target"+i+" score "+ level.targets[i].getScoreAsPercent());          
       } 
         
@@ -169,7 +174,7 @@ void sendOSC() {
     levelData.add( currentLevel );
     levelData.add( level.type );
     oscP5.send(levelData, remote);
-    
+    oscP5.send(levelData, merkel);
     lastLevel = currentLevel;
   }
 }

@@ -39,6 +39,18 @@ class Level{
       case 5:
         initTrans3();
         break;
+      case 6:
+        initLevel4();
+        break;
+      case 7:
+        initTrans4();
+        break;
+      case 8:
+        initLevel5();
+        break;
+      case 9:
+        initTrans5();
+        break;
     }
   }
   
@@ -46,11 +58,12 @@ class Level{
   /* Level Initializers */  
   /**********************/
   
+  
   /*
    * initLevel1
    *
    * Initializes Level 1
-   */
+   */ 
   void initLevel1(){
     this.type = "level";
     this.cols = 80;
@@ -58,10 +71,12 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(248, 52, 171, 231, this.cols, this.rows, 0); // armoir thing
-    targets[1] = new Target(483, 111, 81, 31, this.cols, this.rows, 1); // books
-    targets[2] = new Target(125, 417, 66, 39, this.cols, this.rows, 2); // stub circle
+    targets[0] = new Target(300, 132, 44, 60, this.cols, this.rows, 0); // lock
+    targets[1] = new Target(300, 162, 44, 10, this.cols, this.rows, 1); // stub
+    targets[2] = new Target(300, 172, 44, 10, this.cols, this.rows, 2); // stub
     
+    targets[1].state = 2;
+    targets[2].state = 2;
     createZones();
   }
   
@@ -86,9 +101,9 @@ class Level{
     
     //create targets
     this.targets = new Target[3];
-    targets[0] = new Target(226, 288, 88, 66, this.cols, this.rows, 0); // lower circle
-    targets[1] = new Target(47, 87, 92, 67, this.cols, this.rows, 1); // top left circle
-    targets[2] = new Target(484, 138, 100, 87, this.cols, this.rows, 2); // right cicle
+    targets[0] = new Target(278, 140, 147, 72, this.cols, this.rows, 0); // armoir thing
+    targets[1] = new Target(153, 146, 80, 37, this.cols, this.rows, 1); // books
+    targets[2] = new Target(503, 292, 37, 47, this.cols, this.rows, 2); // sofa (king wee todd did)
     
     createZones();
   }
@@ -97,30 +112,95 @@ class Level{
    * initTrans2
    *
    * Initializes Transition 2
-   */ 
+   */
   void initTrans2(){
     this.type = "transistion";
   }
-
+  
   /*
    * initLevel3
    *
    * Initializes Level 3
-   */ 
+   */
   void initLevel3(){
     this.type = "level";
     this.cols = 80;
     this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(413, 169, 50, 65, this.cols, this.rows, 0); // right ice
+    targets[1] = new Target(97, 90, 102, 80, this.cols, this.rows, 1); // lights
+    targets[2] = new Target(197, 236, 95, 95, this.cols, this.rows, 2); // left ice
+    
+    createZones();
   }
   
   /*
    * initTrans3
    *
    * Initializes Transition 3
-   */
+   */ 
   void initTrans3(){
     this.type = "transistion";
   }
+
+  /*
+   * initLevel4
+   *
+   * Initializes Level 4
+   */ 
+  void initLevel4(){
+    this.type = "level";
+    this.cols = 80;
+    this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(151, 192, 64, 136, this.cols, this.rows, 0); // antelop
+    targets[1] = new Target(37, 119, 99, 80, this.cols, this.rows, 1); // eagle
+    targets[2] = new Target(502, 57, 75, 287, this.cols, this.rows, 2); // tree
+    
+    createZones();
+  }
+  
+  /*
+   * initTrans4
+   *
+   * Initializes Transition 4
+   */
+  void initTrans4(){
+    this.type = "transistion";
+  }
+  
+  /*
+   * initLevel5
+   *
+   * Initializes Level 5
+   */ 
+  void initLevel5(){
+    this.type = "level";
+    this.cols = 80;
+    this.rows = 60;
+    
+    //create targets
+    this.targets = new Target[3];
+    targets[0] = new Target(168, 415, 58, 25, this.cols, this.rows, 0); // ???
+    targets[1] = new Target(234, 184, 30, 56, this.cols, this.rows, 1); // puppet
+    targets[2] = new Target(428, 153, 45, 31, this.cols, this.rows, 2); // ???
+    
+    createZones();
+  }
+  
+  /*
+   * initTrans5
+   *
+   * Initializes Transition 5
+   */
+  void initTrans5(){
+    this.type = "transistion";
+  }
+  
   
   void createZones() {
     this.zones = new Zones(this.cols, this.rows, this.targets);

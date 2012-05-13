@@ -89,7 +89,7 @@ class Target {
 
   int getScoreAsPercent(){
     //throttled score
-    int localScore = floor(this.score * 0.3);
+    int localScore = floor(this.score * 0.1);
     return round(map(localScore, 0, this.totalKeys, 0, 100));
   }
   

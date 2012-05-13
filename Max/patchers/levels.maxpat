@@ -4,10 +4,10 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 0,
-			"revision" : 4
+			"revision" : 5
 		}
 ,
-		"rect" : [ 609.0, 44.0, 1440.0, 826.0 ],
+		"rect" : [ 46.0, 44.0, 1038.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -27,6 +27,34 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1248.5, 43.720795, 115.0, 20.0 ],
+					"text" : "loadmess 1024 768"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1248.5, 10.0, 102.0, 20.0 ],
+					"text" : "loadmess 1360 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -1128,10 +1156,10 @@
 					"id" : "obj-62",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 1220.419922, 381.049988, 220.0, 20.0 ],
-					"text" : "OSC-route /isComplete /active /inactive"
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 1220.419922, 381.049988, 256.0, 20.0 ],
+					"text" : "OSC-route /isComplete /active /inactive /score"
 				}
 
 			}
@@ -1142,10 +1170,10 @@
 					"id" : "obj-51",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 1826.00647, 381.049988, 220.0, 20.0 ],
-					"text" : "OSC-route /isComplete /active /inactive"
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 1826.00647, 381.049988, 256.0, 20.0 ],
+					"text" : "OSC-route /isComplete /active /inactive /score"
 				}
 
 			}
@@ -1156,10 +1184,10 @@
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 662.52533, 381.049988, 220.0, 20.0 ],
-					"text" : "OSC-route /isComplete /active /inactive"
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 662.52533, 381.049988, 256.0, 20.0 ],
+					"text" : "OSC-route /isComplete /active /inactive /score"
 				}
 
 			}
@@ -1285,7 +1313,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1759.167969, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_3.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_0_3.png"
 				}
 
 			}
@@ -1354,7 +1382,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1193.265869, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_2.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_0_2.png"
 				}
 
 			}
@@ -1437,7 +1465,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 620.9328, 469.66275, 425.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_overlay_0_1.png"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_overlay_0_1.png"
 				}
 
 			}
@@ -1451,7 +1479,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 615.9328, 143.435745, 424.0, 18.0 ],
-					"text" : "/Users/joseph/Projects/create_denver/Max/media/level_bg_0.mov"
+					"text" : "/Users/Zack/Create-Denver/Max/media/level_bg_0.mov"
 				}
 
 			}
@@ -1856,6 +1884,34 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"attr" : "pos",
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-14",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1385.765869, 10.0, 208.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "size",
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-16",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1385.765869, 43.720795, 208.0, 20.0 ]
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -2115,6 +2171,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-139", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -2385,6 +2450,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-159", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -2740,6 +2814,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-134", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3022,7 +3114,7 @@
 					"destination" : [ "obj-139", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 739.02533, 560.413635, 826.932861, 560.413635 ],
+					"midpoints" : [ 731.27533, 560.413635, 826.932861, 560.413635 ],
 					"source" : [ "obj-49", 1 ]
 				}
 
@@ -3087,7 +3179,7 @@
 					"destination" : [ "obj-173", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 1902.50647, 547.720032, 1961.167969, 547.720032 ],
+					"midpoints" : [ 1894.75647, 547.720032, 1961.167969, 547.720032 ],
 					"source" : [ "obj-51", 1 ]
 				}
 
@@ -3142,7 +3234,7 @@
 					"destination" : [ "obj-156", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 1296.919922, 543.083679, 1395.265869, 543.083679 ],
+					"midpoints" : [ 1289.169922, 543.083679, 1395.265869, 543.083679 ],
 					"source" : [ "obj-62", 1 ]
 				}
 
@@ -3437,7 +3529,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "levelcontroller.js",
-				"bootpath" : "/Users/joseph/Projects/create_denver/Max/code",
+				"bootpath" : "/Users/Zack/Create-Denver/Max/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
